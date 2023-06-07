@@ -23,9 +23,6 @@ public class VacationPayService {
         final BigDecimal vacationPayWithTaxes = new BigDecimal(averageSalary / averageNumberDaysInMonth * vacationDays);
         final BigDecimal vacationPay = vacationPayWithTaxes.subtract(vacationPayWithTaxes.multiply(NDFL));
 
-        log.info("----");
-        log.info("----");
-        log.info("----main");
         return vacationPay.setScale(2, RoundingMode.FLOOR);
     }
 }
