@@ -25,6 +25,7 @@ public class VacationPayService {
 
         log.info("----");
         log.info("----");
+        log.info("----");
         return vacationPay.setScale(2, RoundingMode.FLOOR);
     }
 }
