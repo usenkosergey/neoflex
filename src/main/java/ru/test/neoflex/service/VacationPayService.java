@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.Objects;
 
 @Log4j2
 @Service
@@ -24,6 +23,7 @@ public class VacationPayService {
         final BigDecimal vacationPayWithTaxes = new BigDecimal(averageSalary / averageNumberDaysInMonth * vacationDays);
         final BigDecimal vacationPay = vacationPayWithTaxes.subtract(vacationPayWithTaxes.multiply(NDFL));
 
+        log.info("----");
         return vacationPay.setScale(2, RoundingMode.FLOOR);
     }
 }
